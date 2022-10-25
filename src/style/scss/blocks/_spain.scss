@@ -1,0 +1,49 @@
+.spain {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  width: 100%;
+  padding: 120px 5px;
+
+  @media only screen and (min-width: 1024px) {
+    padding: 220px 18px 120px;
+  }
+
+  .card {
+    align-items: center;
+    background-color: rgba(35, 35, 35, 0.9);
+    margin: 0 auto;
+    padding: 44px 32px;
+
+    @media only screen and (min-width: 1024px) {
+      width: 100%;
+      max-width: 550px;
+      margin-left: 0;
+    }
+
+    &.card-2 {
+      @media only screen and (min-width: 1024px) {
+        margin-right: 0;
+        margin-left: auto;
+      }
+    }
+  }
+
+  .pseudo-title {
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    padding-bottom: 16px;
+  }
+
+  h3 {
+    padding-bottom: 16px;
+  }
+
+  p {
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    padding-bottom: 28px;
+  }
+}

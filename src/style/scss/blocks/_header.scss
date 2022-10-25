@@ -1,0 +1,176 @@
+.header {
+  .nav-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $blue;
+    z-index: 3;
+
+    @media only screen and (min-width: 1024px) {
+      padding: 7px 0;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-left: 30px;
+      flex-grow: 1;
+
+      @media only screen and (min-width: 768px) {
+        margin-left: 0;
+      }
+
+      @media only screen and (min-width: 1024px) {
+        align-items: center;
+      }
+
+      .logo-holder {
+        padding: 32px 0;
+        margin: 0 auto;
+
+        @media only screen and (min-width: 768px) {
+          padding-bottom: 0;
+        }
+
+        @media only screen and (min-width: 1024px) {
+          margin: 0;
+          padding: 0;
+          margin-left: 17px;
+        }
+      }
+
+      .nav-holder {
+        transition: opacity ease-in-out 0.4s;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        top: 100%;
+        left: 0;
+        background-color: $blue;
+        padding: 20px;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+
+        @media only screen and (min-width: 768px) {
+          visibility: visible;
+          opacity: 1;
+          position: static;
+        }
+
+        @media only screen and (min-width: 1024px) {
+          width: auto;
+        }
+
+        &.active {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      .nav-list {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 20px;
+
+        @media only screen and (min-width: 768px) {
+          display: flex;
+          flex-wrap: wrap;
+          margin-bottom: 0;
+        }
+      }
+
+      .nav-item {
+        padding: 0 20px;
+        text-align: center;
+        margin-bottom: 10px;
+
+        @media only screen and (min-width: 1024px) {
+          margin-bottom: 0;
+        }
+      }
+
+      .nav-link {
+        font-family: $nav-font-family;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $white;
+        transition: opacity ease-in-out 0.3s;
+      }
+
+      .nav-link:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .nav-opener {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    position: relative;
+    width: 30px;
+    height: 30px;
+
+    @media only screen and (min-width: 768px) {
+      display: none;
+    }
+
+    &.active {
+      span {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      &:before {
+        transform: rotate(-45deg);
+        top: 42%;
+      }
+
+      &:after {
+        transform: rotate(45deg);
+        bottom: 50%;
+      }
+    }
+
+    span,
+    &:before,
+    &:after {
+      transition: all ease-in-out 0.4s;
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 2px;
+      background-color: $white;
+      left: 0;
+    }
+
+    &:before {
+      top: 0;
+    }
+
+    &:after {
+      bottom: 0;
+    }
+
+    span {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+
+
